@@ -119,4 +119,4 @@ The following bugs have been found:
 
 The fuzzer generates random values for the types that are to be encoded and decoded. The values are generated based on the type of the field. 
 
-> Warning: The current string generation was modified to generate valid strings for sway which does not support characters such as '\n' or '\t'. Therefore, such characters are currently not generated. Please refer to ``src/sampler.rs:sample_ascii_string`` to modify the string generation to include such characters.
+> **Warning**: The current string generation was modified to generate valid strings for sway which does not support characters such as '\n' or '\t'. Therefore, such characters are currently not generated. Please refer to ``src/sampler.rs:sample_ascii_string`` to modify the string generation to include such characters.
