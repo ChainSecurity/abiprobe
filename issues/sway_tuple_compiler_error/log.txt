@@ -1,0 +1,414 @@
+Sway command error: `Command failed with status exit status: 1: [1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:24:8
+[1m[94m   |[0m
+[1m[94m22 |[0m 
+[1m[94m23 |[0m impl Enum5 {
+[1m[94m24 |[0m     fn get_Variant1(self) -> Struct6 {
+[1m[94m   |[0m[1m[93m        ------------[0m [1m[93mFunction name "get_Variant1" is not idiomatic. Function names should be snake_case, like "get_variant1".[0m
+[1m[94m25 |[0m         match self {
+[1m[94m26 |[0m             Enum5::Variant1(v) => v,
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:30:4
+[1m[94m   |[0m
+[1m[94m28 |[0m 
+[1m[94m29 |[0m     }
+[1m[94m30 |[0m fn get_Variant2(self) -> [u8; 5] {
+[1m[94m   |[0m[1m[93m    ------------[0m [1m[93mFunction name "get_Variant2" is not idiomatic. Function names should be snake_case, like "get_variant2".[0m
+[1m[94m31 |[0m         match self {
+[1m[94m32 |[0m             Enum5::Variant2(v) => v,
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:44:8
+[1m[94m   |[0m
+[1m[94m42 |[0m 
+[1m[94m43 |[0m impl Enum7 {
+[1m[94m44 |[0m     fn get_Variant1(self) -> str[2] {
+[1m[94m   |[0m[1m[93m        ------------[0m [1m[93mFunction name "get_Variant1" is not idiomatic. Function names should be snake_case, like "get_variant1".[0m
+[1m[94m45 |[0m         match self {
+[1m[94m46 |[0m             Enum7::Variant1(v) => v,
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:50:4
+[1m[94m   |[0m
+[1m[94m48 |[0m 
+[1m[94m49 |[0m     }
+[1m[94m50 |[0m fn get_Variant2(self) -> u64 {
+[1m[94m   |[0m[1m[93m    ------------[0m [1m[93mFunction name "get_Variant2" is not idiomatic. Function names should be snake_case, like "get_variant2".[0m
+[1m[94m51 |[0m         match self {
+[1m[94m52 |[0m             Enum7::Variant2(v) => v,
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:56:4
+[1m[94m   |[0m
+[1m[94m54 |[0m 
+[1m[94m55 |[0m     }
+[1m[94m56 |[0m fn get_Variant3(self) -> Vec<(Vec<str[2]>, b256, u64, Vec<str[5]>)> {
+[1m[94m   |[0m[1m[93m    ------------[0m [1m[93mFunction name "get_Variant3" is not idiomatic. Function names should be snake_case, like "get_variant3".[0m
+[1m[94m57 |[0m         match self {
+[1m[94m58 |[0m             Enum7::Variant3(v) => v,
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:62:4
+[1m[94m   |[0m
+[1m[94m60 |[0m 
+[1m[94m61 |[0m     }
+[1m[94m62 |[0m fn get_Variant4(self) -> str[3] {
+[1m[94m   |[0m[1m[93m    ------------[0m [1m[93mFunction name "get_Variant4" is not idiomatic. Function names should be snake_case, like "get_variant4".[0m
+[1m[94m63 |[0m         match self {
+[1m[94m64 |[0m             Enum7::Variant4(v) => v,
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:87:8
+[1m[94m   |[0m
+[1m[94m85 |[0m 
+[1m[94m86 |[0m impl Enum8 {
+[1m[94m87 |[0m     fn get_Variant1(self) -> Struct9 {
+[1m[94m   |[0m[1m[93m        ------------[0m [1m[93mFunction name "get_Variant1" is not idiomatic. Function names should be snake_case, like "get_variant1".[0m
+[1m[94m88 |[0m         match self {
+[1m[94m89 |[0m             Enum8::Variant1(v) => v,
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m: [1mMatch arm is unreachable[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:90:13
+[1m[94m   |[0m
+...
+[1m[94m88 |[0m         match self {
+[1m[94m   |[0m[1m[94m               ----[0m [1m[94m[1m[94minfo[0m[1m[94m: The expression to match on is of type "Enum8".[0m[0m
+[1m[94m89 |[0m             Enum8::Variant1(v) => v,
+[1m[94m   |[0m[1m[94m             ------------------[0m [1m[94m[1m[94minfo[0m[1m[94m: Preceding match arms already match all possible values of `self`.[0m[0m
+[1m[94m90 |[0m             _ => revert(0),
+[1m[94m   |[0m[1m[93m             -[0m [1m[93mLast catch-all match arm `_` is unreachable.[0m
+[1m[94m   |[0m
+   [1m[94m=[0m [1m[96mhelp[0m: Catch-all patterns are often used in last match arms.
+   [1m[94m=[0m [1m[96mhelp[0m: But in this case, the preceding arms already match all possible values of `self`.
+   [1m[94m=[0m [1m[96mhelp[0m: Consider removing the unreachable last catch-all arm.
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:110:8
+[1m[94m    |[0m
+[1m[94m108 |[0m 
+[1m[94m109 |[0m impl Enum6 {
+[1m[94m110 |[0m     fn get_Variant1(self) -> u16 {
+[1m[94m    |[0m[1m[93m        ------------[0m [1m[93mFunction name "get_Variant1" is not idiomatic. Function names should be snake_case, like "get_variant1".[0m
+[1m[94m111 |[0m         match self {
+[1m[94m112 |[0m             Enum6::Variant1(v) => v,
+[1m[94m    |[0m
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:116:4
+[1m[94m    |[0m
+[1m[94m114 |[0m 
+[1m[94m115 |[0m     }
+[1m[94m116 |[0m fn get_Variant2(self) -> Enum7 {
+[1m[94m    |[0m[1m[93m    ------------[0m [1m[93mFunction name "get_Variant2" is not idiomatic. Function names should be snake_case, like "get_variant2".[0m
+[1m[94m117 |[0m         match self {
+[1m[94m118 |[0m             Enum6::Variant2(v) => v,
+[1m[94m    |[0m
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:122:4
+[1m[94m    |[0m
+[1m[94m120 |[0m 
+[1m[94m121 |[0m     }
+[1m[94m122 |[0m fn get_Variant3(self) -> Struct7 {
+[1m[94m    |[0m[1m[93m    ------------[0m [1m[93mFunction name "get_Variant3" is not idiomatic. Function names should be snake_case, like "get_variant3".[0m
+[1m[94m123 |[0m         match self {
+[1m[94m124 |[0m             Enum6::Variant3(v) => v,
+[1m[94m    |[0m
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:128:4
+[1m[94m    |[0m
+[1m[94m126 |[0m 
+[1m[94m127 |[0m     }
+[1m[94m128 |[0m fn get_Variant4(self) -> Vec<u64> {
+[1m[94m    |[0m[1m[93m    ------------[0m [1m[93mFunction name "get_Variant4" is not idiomatic. Function names should be snake_case, like "get_variant4".[0m
+[1m[94m129 |[0m         match self {
+[1m[94m130 |[0m             Enum6::Variant4(v) => v,
+[1m[94m    |[0m
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:134:4
+[1m[94m    |[0m
+[1m[94m132 |[0m 
+[1m[94m133 |[0m     }
+[1m[94m134 |[0m fn get_Variant5(self) -> [b256; 5] {
+[1m[94m    |[0m[1m[93m    ------------[0m [1m[93mFunction name "get_Variant5" is not idiomatic. Function names should be snake_case, like "get_variant5".[0m
+[1m[94m135 |[0m         match self {
+[1m[94m136 |[0m             Enum6::Variant5(v) => v,
+[1m[94m    |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:11:2
+[1m[94m   |[0m
+[1m[94m 9 |[0m 
+[1m[94m10 |[0m struct Struct6 {
+[1m[94m11 |[0m 	field1 : u64,
+[1m[94m   |[0m[1m[93m ------[0m [1m[93mThis struct field is never accessed.[0m
+[1m[94m12 |[0m 	field2 : bool,
+[1m[94m13 |[0m 	field3 : (Vec<u64>, (Vec<b256>), String, str[4]),
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:12:2
+[1m[94m   |[0m
+[1m[94m10 |[0m 
+[1m[94m11 |[0m 	field1 : u64,
+[1m[94m12 |[0m 	field2 : bool,
+[1m[94m   |[0m[1m[93m ------[0m [1m[93mThis struct field is never accessed.[0m
+[1m[94m13 |[0m 	field3 : (Vec<u64>, (Vec<b256>), String, str[4]),
+[1m[94m14 |[0m 	field4 : u64,
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:13:2
+[1m[94m   |[0m
+[1m[94m11 |[0m 
+[1m[94m12 |[0m 	field2 : bool,
+[1m[94m13 |[0m 	field3 : (Vec<u64>, (Vec<b256>), String, str[4]),
+[1m[94m   |[0m[1m[93m ------[0m [1m[93mThis struct field is never accessed.[0m
+[1m[94m14 |[0m 	field4 : u64,
+[1m[94m15 |[0m 	field5 : bool,
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:14:2
+[1m[94m   |[0m
+[1m[94m12 |[0m 
+[1m[94m13 |[0m 	field3 : (Vec<u64>, (Vec<b256>), String, str[4]),
+[1m[94m14 |[0m 	field4 : u64,
+[1m[94m   |[0m[1m[93m ------[0m [1m[93mThis struct field is never accessed.[0m
+[1m[94m15 |[0m 	field5 : bool,
+[1m[94m16 |[0m }
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:15:2
+[1m[94m   |[0m
+[1m[94m13 |[0m 
+[1m[94m14 |[0m 	field4 : u64,
+[1m[94m15 |[0m 	field5 : bool,
+[1m[94m   |[0m[1m[93m ------[0m [1m[93mThis struct field is never accessed.[0m
+[1m[94m16 |[0m }
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:24:5
+[1m[94m   |[0m
+[1m[94m22 |[0m   
+[1m[94m23 |[0m   impl Enum5 {
+[1m[94m24 |[0m       fn get_Variant1(self) -> Struct6 {
+[1m[94m   |[0m  [1m[93m_____-[0m
+[1m[94m25 |[0m [1m[93m|[0m         match self {
+[1m[94m26 |[0m [1m[93m|[0m             Enum5::Variant1(v) => v,
+[1m[94m27 |[0m [1m[93m|[0m             _ => revert(0),
+[1m[94m28 |[0m [1m[93m|[0m         }
+[1m[94m29 |[0m [1m[93m|[0m     }
+[1m[94m   |[0m [1m[93m|[0m[1m[93m_____-[0m [1m[93mThis method is never called.[0m
+[1m[94m30 |[0m   fn get_Variant2(self) -> [u8; 5] {
+[1m[94m31 |[0m           match self {
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:44:5
+[1m[94m   |[0m
+[1m[94m42 |[0m   
+[1m[94m43 |[0m   impl Enum7 {
+[1m[94m44 |[0m       fn get_Variant1(self) -> str[2] {
+[1m[94m   |[0m  [1m[93m_____-[0m
+[1m[94m45 |[0m [1m[93m|[0m         match self {
+[1m[94m46 |[0m [1m[93m|[0m             Enum7::Variant1(v) => v,
+[1m[94m47 |[0m [1m[93m|[0m             _ => revert(0),
+[1m[94m48 |[0m [1m[93m|[0m         }
+[1m[94m49 |[0m [1m[93m|[0m     }
+[1m[94m   |[0m [1m[93m|[0m[1m[93m_____-[0m [1m[93mThis method is never called.[0m
+[1m[94m50 |[0m   fn get_Variant2(self) -> u64 {
+[1m[94m51 |[0m           match self {
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:50:1
+[1m[94m   |[0m
+[1m[94m48 |[0m   
+[1m[94m49 |[0m       }
+[1m[94m50 |[0m [1m[93m/[0m fn get_Variant2(self) -> u64 {
+[1m[94m51 |[0m [1m[93m|[0m         match self {
+[1m[94m52 |[0m [1m[93m|[0m             Enum7::Variant2(v) => v,
+[1m[94m53 |[0m [1m[93m|[0m             _ => revert(0),
+[1m[94m54 |[0m [1m[93m|[0m         }
+[1m[94m55 |[0m [1m[93m|[0m     }
+[1m[94m   |[0m [1m[93m|[0m[1m[93m_____-[0m [1m[93mThis method is never called.[0m
+[1m[94m56 |[0m   fn get_Variant3(self) -> Vec<(Vec<str[2]>, b256, u64, Vec<str[5]>)> {
+[1m[94m57 |[0m           match self {
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:56:1
+[1m[94m   |[0m
+[1m[94m54 |[0m   
+[1m[94m55 |[0m       }
+[1m[94m56 |[0m [1m[93m/[0m fn get_Variant3(self) -> Vec<(Vec<str[2]>, b256, u64, Vec<str[5]>)> {
+[1m[94m57 |[0m [1m[93m|[0m         match self {
+[1m[94m58 |[0m [1m[93m|[0m             Enum7::Variant3(v) => v,
+[1m[94m59 |[0m [1m[93m|[0m             _ => revert(0),
+[1m[94m60 |[0m [1m[93m|[0m         }
+[1m[94m61 |[0m [1m[93m|[0m     }
+[1m[94m   |[0m [1m[93m|[0m[1m[93m_____-[0m [1m[93mThis method is never called.[0m
+[1m[94m62 |[0m   fn get_Variant4(self) -> str[3] {
+[1m[94m63 |[0m           match self {
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+  [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:62:1
+[1m[94m   |[0m
+[1m[94m60 |[0m   
+[1m[94m61 |[0m       }
+[1m[94m62 |[0m [1m[93m/[0m fn get_Variant4(self) -> str[3] {
+[1m[94m63 |[0m [1m[93m|[0m         match self {
+[1m[94m64 |[0m [1m[93m|[0m             Enum7::Variant4(v) => v,
+[1m[94m65 |[0m [1m[93m|[0m             _ => revert(0),
+[1m[94m66 |[0m [1m[93m|[0m         }
+[1m[94m67 |[0m [1m[93m|[0m     }
+[1m[94m   |[0m [1m[93m|[0m[1m[93m_____-[0m [1m[93mThis method is never called.[0m
+[1m[94m68 |[0m   }
+[1m[94m69 |[0m   struct Struct8 {
+[1m[94m   |[0m
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:110:5
+[1m[94m    |[0m
+[1m[94m108 |[0m   
+[1m[94m109 |[0m   impl Enum6 {
+[1m[94m110 |[0m       fn get_Variant1(self) -> u16 {
+[1m[94m    |[0m  [1m[93m_____-[0m
+[1m[94m111 |[0m [1m[93m|[0m         match self {
+[1m[94m112 |[0m [1m[93m|[0m             Enum6::Variant1(v) => v,
+[1m[94m113 |[0m [1m[93m|[0m             _ => revert(0),
+[1m[94m114 |[0m [1m[93m|[0m         }
+[1m[94m115 |[0m [1m[93m|[0m     }
+[1m[94m    |[0m [1m[93m|[0m[1m[93m_____-[0m [1m[93mThis method is never called.[0m
+[1m[94m116 |[0m   fn get_Variant2(self) -> Enum7 {
+[1m[94m117 |[0m           match self {
+[1m[94m    |[0m
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:116:1
+[1m[94m    |[0m
+[1m[94m114 |[0m   
+[1m[94m115 |[0m       }
+[1m[94m116 |[0m [1m[93m/[0m fn get_Variant2(self) -> Enum7 {
+[1m[94m117 |[0m [1m[93m|[0m         match self {
+[1m[94m118 |[0m [1m[93m|[0m             Enum6::Variant2(v) => v,
+[1m[94m119 |[0m [1m[93m|[0m             _ => revert(0),
+[1m[94m120 |[0m [1m[93m|[0m         }
+[1m[94m121 |[0m [1m[93m|[0m     }
+[1m[94m    |[0m [1m[93m|[0m[1m[93m_____-[0m [1m[93mThis method is never called.[0m
+[1m[94m122 |[0m   fn get_Variant3(self) -> Struct7 {
+[1m[94m123 |[0m           match self {
+[1m[94m    |[0m
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:128:1
+[1m[94m    |[0m
+[1m[94m126 |[0m   
+[1m[94m127 |[0m       }
+[1m[94m128 |[0m [1m[93m/[0m fn get_Variant4(self) -> Vec<u64> {
+[1m[94m129 |[0m [1m[93m|[0m         match self {
+[1m[94m130 |[0m [1m[93m|[0m             Enum6::Variant4(v) => v,
+[1m[94m131 |[0m [1m[93m|[0m             _ => revert(0),
+[1m[94m132 |[0m [1m[93m|[0m         }
+[1m[94m133 |[0m [1m[93m|[0m     }
+[1m[94m    |[0m [1m[93m|[0m[1m[93m_____-[0m [1m[93mThis method is never called.[0m
+[1m[94m134 |[0m   fn get_Variant5(self) -> [b256; 5] {
+[1m[94m135 |[0m           match self {
+[1m[94m    |[0m
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:134:1
+[1m[94m    |[0m
+[1m[94m132 |[0m   
+[1m[94m133 |[0m       }
+[1m[94m134 |[0m [1m[93m/[0m fn get_Variant5(self) -> [b256; 5] {
+[1m[94m135 |[0m [1m[93m|[0m         match self {
+[1m[94m136 |[0m [1m[93m|[0m             Enum6::Variant5(v) => v,
+[1m[94m137 |[0m [1m[93m|[0m             _ => revert(0),
+[1m[94m138 |[0m [1m[93m|[0m         }
+[1m[94m139 |[0m [1m[93m|[0m     }
+[1m[94m    |[0m [1m[93m|[0m[1m[93m_____-[0m [1m[93mThis method is never called.[0m
+[1m[94m140 |[0m   }
+[1m[94m    |[0m
+____
+
+[1m[93mwarning[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:166:9
+[1m[94m    |[0m
+[1m[94m164 |[0m 
+[1m[94m165 |[0m 
+[1m[94m166 |[0m     let decoded = abi_decode::<(str[2])>(encoded);
+[1m[94m    |[0m[1m[93m         -------[0m [1m[93mThis declaration is never used.[0m
+[1m[94m167 |[0m     log(from_str_array(v.0) == from_str_array(decoded.0));
+[1m[94m168 |[0m 	let mut bytes0 = Bytes::new();
+[1m[94m    |[0m
+____
+
+[1m[91merror[0m: [1mTuple element access requires a tuple[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:167:24
+[1m[94m    |[0m
+...
+[1m[94m167 |[0m     log(from_str_array(v.0) == from_str_array(decoded.0));
+[1m[94m    |[0m[1m[91m                        ^[0m [1m[91mThis expression has type "str[2]", which is not a tuple or a reference to a tuple.[0m
+[1m[94m    |[0m[1m[94m                          -[0m [1m[94m[1m[94minfo[0m[1m[94m: Tuple element access happens here, on the index 0.[0m[0m
+[1m[94m    |[0m
+    [1m[94m=[0m [1m[96mhelp[0m: In Sway, tuple elements can be accessed on:
+    [1m[94m=[0m [1m[96mhelp[0m:   - tuples. E.g., `my_tuple.1`.
+    [1m[94m=[0m [1m[96mhelp[0m:   - references, direct or indirect, to tuples. E.g., `(&my_tuple).1` or `(&&&my_tuple).1`.
+____
+
+[1m[91merror[0m
+   [1m[94m-->[0m /home/spittfire/Documents/abiprobe/forc_project/src/main.sw:167:29
+[1m[94m    |[0m
+[1m[94m165 |[0m 
+[1m[94m166 |[0m     let decoded = abi_decode::<(str[2])>(encoded);
+[1m[94m167 |[0m     log(from_str_array(v.0) == from_str_array(decoded.0));
+[1m[94m    |[0m[1m[91m                             ^^[0m [1m[91mNo method named "eq" found for type "{unknown}".[0m
+[1m[94m168 |[0m 	let mut bytes0 = Bytes::new();
+[1m[94m169 |[0m 	bytes0.push(81u8);
+[1m[94m    |[0m
+____
+
+[31m  Aborting due to 2 errors.[0m
+Error: Failed to compile forc_project
+`

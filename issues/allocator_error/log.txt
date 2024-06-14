@@ -1,0 +1,4 @@
+Sway command error: `Command failed with status exit status: 101: thread 'main' panicked at sway-core/src/asm_lang/allocated_ops.rs:730:23:
+Unable to offset into the data section more than 2^12 bits. Unsupported data section length.
+note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
+`

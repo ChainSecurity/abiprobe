@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const fuels_1 = require("fuels");
+// const v: Array<number> = [1, 2];
+// const coder = new VecCoder(new BigNumberCoder('u64'));
+// const encoded = coder.encode(v);
+// console.log(encoded);
+// const [decodedValue, decodedLength] = coder.decode(encoded, 0);
+// expect(v).toEqual(expected);
+const coder = new fuels_1.VecCoder(new fuels_1.BooleanCoder());
+const expected = new Uint8Array([0, 0, 0, 0, 0, 0, 0, 6, 1, 0, 1, 0, 1, 1]);
+const actual = coder.encode([true, false, true, false, true, true]);
+console.log(expected === actual);

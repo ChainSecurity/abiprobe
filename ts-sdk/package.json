@@ -1,0 +1,12 @@
+{
+  "dependencies": {
+    "@fuel-ts/abi-coder": "^0.89.2",
+    "@fuel-ts/math": "^0.89.2",
+    "expect": "^29.7.0",
+    "ts-node": "^10.9.2",
+    "fuels": "^0.89.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5"
+  }
+}

@@ -1,0 +1,22 @@
+/target
+
+forc_project/src/main.sw
+# Added by cargo
+#
+# already existing elements were commented out
+
+#/target
+out
+target
+
+templates/template.*
+
+ts-sdk/node_modules
+
+ts-sdk/index.ts
+
+TypeScriptSDK/node_modules
+
+output
+
+test-output
