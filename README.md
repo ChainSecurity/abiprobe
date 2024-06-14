@@ -113,3 +113,10 @@ The following bugs have been found:
 - RustSDK fails to decode an element that it encoded (see ``issues/rustsdk_decoding_errors/``)
 - Sway compiler can run into a memory flow error (see ``issues/sway_memory_overflow/``) or a memory overlap error (see ``issues/sway_memory_write_overlap/``)
 - Sway fails to compile due to a type check error occuring when a tuple of a single element is decoded as the decoding will not produce a tuple but only the single element it contained. (see ``issues/sway_tuple_compiler_error/``)
+
+
+## Value generation
+
+The fuzzer generates random values for the types that are to be encoded and decoded. The values are generated based on the type of the field. 
+
+> Warning: The current string generation was modified to generate valid strings for sway which does not support characters such as '\n' or '\t'. Therefore, such characters are currently not generated. Please refer to ``src/sampler.rs:sample_ascii_string`` to modify the string generation to include such characters.
