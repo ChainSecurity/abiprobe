@@ -43,6 +43,12 @@ ENV PATH="$NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH"
 # Verify the Node.js installation
 RUN node -v
 
+# Install fuel toolchain
+RUN fuelup toolchain install nightly-2024-05-28
+
+# Set the default toolchain
+RUN fuelup default nightly-2024-05-28-x86_64-unknown-linux-gnu
+
 # Set the working directory
 WORKDIR /usr/src/abiprobe
 

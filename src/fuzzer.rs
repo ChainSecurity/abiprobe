@@ -8,7 +8,7 @@ use fuels::types::{param_types::ParamType, Token};
 use serde::{Deserialize, Serialize};
 use tracing::{debug, error, info, warn};
 
-use crate::{rustsdk, sampler::Sampler, sway::Sway, tssdk::Ts};
+use crate::{rustsdk::{self, RustSDK}, sampler::Sampler, sway::Sway, tssdk::Ts};
 
 pub struct Fuzzer {
     sampler: Sampler,
@@ -18,6 +18,7 @@ pub struct Fuzzer {
     output_folder: String,
     sway: Sway,
     ts: Ts,
+    rustsdk: RustSDK,
 }
 
 #[derive(Serialize, Deserialize, Debug)]
@@ -44,6 +45,8 @@ impl Fuzzer {
         //Create if not exists compilation_errors folder
         fs::create_dir_all(format!("{}/compilation_errors", &output_folder)).unwrap();
 
+        fs::create_dir_all(format!("{}/decoding_missmatches/", output_folder)).unwrap();
+
         Self {
             sampler,
             rounds,
@@ -51,6 +54,7 @@ impl Fuzzer {
             round: 0,
             sway: Sway::new(&output_folder),
             ts: Ts::new(&output_folder),
+            rustsdk: RustSDK::new(&output_folder),
             output_folder,
         }
     }
@@ -143,7 +147,7 @@ impl Fuzzer {
         let samples = self.sampler.sample(self.samples); // The size of a batch
         debug!("Sampled: {:?}", samples);
 
-        let (rust_encodings, rust_decodings) = rustsdk::exercise_abi(&samples);
+        let (rust_encodings, rust_decodings) = self.rustsdk.exercise_abi(&samples);
         let (sway_encodings, sway_decodings) = self.sway.exercise_abi(&samples);
         let (ts_encodings, ts_decodings) = self.ts.exercise_abi(&samples);
 
