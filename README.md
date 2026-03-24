@@ -1,6 +1,6 @@
 # ABIProbe
 
-ABIProbe is a fuzzer for testing the consistency of encoding and decoding of ABI between Rust SDK, Sway and Typescript SDK. Furtheremore, due to the nature of the fuzzer it can also discover sway compiler bugs as it generates sway code that is then compiled and executed to test the encoding and decoding of the ABI.
+ABIProbe is a fuzzer for testing the consistency of encoding and decoding of ABI between Rust SDK, Sway and Typescript SDK. Furthermore, due to the nature of the fuzzer it can also discover sway compiler bugs as it generates sway code that is then compiled and executed to test the encoding and decoding of the ABI.
 
 ## Usage
 
@@ -27,7 +27,7 @@ docker run -it --rm -v $(pwd)/test-output:/usr/src/abiprobe/test-output abiprobe
 
 ## Config
 
-By default ``config.toml`` is used as the config file. This can be modified by using the command line argument ``--config`` followed by the path to the config file to be used.
+By default `config.toml` is used as the config file. This can be modified by using the command line argument `--config` followed by the path to the config file to be used.
 
 The config file allows to specify the following parameters:
 
@@ -75,13 +75,13 @@ The output folder has the following structure
 └── sway_reverts
 ```
 
-``compilation_errors`` contains the logs of errors that occur during compilation of either the geneated sway smart contract or the generated typescript SDK.
+`compilation_errors` contains the logs of errors that occur during compilation of either the generated sway smart contract or the generated typescript SDK.
 
-``decoding_errors`` contains the logs of errors that occur during abi decoding of the encoding.
+`decoding_errors` contains the logs of errors that occur during abi decoding of the encoding.
 
-``encoding_missmatches`` contains the logs of errors that occur when there is a missmatch of the abi encoding between at least two of the three implementations (RustSDK, Sway, TypescriptSDK).
+`encoding_missmatches` contains the logs of errors that occur when there is a mismatch of the abi encoding between at least two of the three implementations (RustSDK, Sway, TypescriptSDK).
 
-``sway_reverts`` contains the logs of reverts that occur during the execution of the sway smart contract.
+`sway_reverts` contains the logs of reverts that occur during the execution of the sway smart contract.
 
 
 
@@ -106,17 +106,17 @@ In this part we give a brief overview of the project structure.
 
 ## Uncovered bugs
 
-Several bugs have been found by the fuzzer. They can be found in the ``issues` folder. 
+Several bugs have been found by the fuzzer. They can be found in the `issues` folder. 
 
 The following bugs have been found:
 
-- RustSDK fails to decode an element that it encoded (see ``issues/rustsdk_decoding_errors/``)
-- Sway compiler can run into a memory flow error (see ``issues/sway_memory_overflow/``) or a memory overlap error (see ``issues/sway_memory_write_overlap/``)
-- Sway fails to compile due to a type check error occuring when a tuple of a single element is decoded as the decoding will not produce a tuple but only the single element it contained. (see ``issues/sway_tuple_compiler_error/``)
+- RustSDK fails to decode an element that it encoded (see `issues/rustsdk_decoding_errors/`)
+- Sway compiler can run into a memory overflow error (see `issues/sway_memory_overflow/`) or a memory overlap error (see `issues/sway_memory_write_overlap/`)
+- Sway fails to compile due to a type check error occurring when a tuple of a single element is decoded as the decoding will not produce a tuple but only the single element it contained. (see `issues/sway_tuple_compiler_error/`)
 
 
 ## Value generation
 
 The fuzzer generates random values for the types that are to be encoded and decoded. The values are generated based on the type of the field. 
 
-> **Warning**: The current string generation was modified to generate valid strings for sway which does not support characters such as '\n' or '\t'. Therefore, such characters are currently not generated. Please refer to ``src/sampler.rs:sample_ascii_string`` to modify the string generation to include such characters.
+> **Warning**: The current string generation was modified to generate valid strings for sway which does not support characters such as '\n' or '\t'. Therefore, such characters are currently not generated. Please refer to `src/sampler.rs:sample_ascii_string` to modify the string generation to include such characters.
