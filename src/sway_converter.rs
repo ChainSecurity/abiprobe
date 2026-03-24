@@ -135,7 +135,11 @@ impl SwayConverter {
             ParamType::StringSlice => "str".to_string(),
             ParamType::Tuple(types) => {
                 let values: Vec<String> = types.iter().map(|p| self.get_type(p)).collect();
-                format!("({})", values.join(", "))
+                if values.len() == 1 {
+                    format!("({},)", values[0])
+                } else {
+                    format!("({})", values.join(", "))
+                }
             }
             ParamType::Array(element_type, size) => {
                 let string_element_type = self.get_type(element_type);
@@ -211,7 +215,11 @@ impl SwayConverter {
                     all_values.iter().cloned().unzip();
 
                 (
-                    format!("({})", values.join(", ")),
+                    if values.len() == 1 {
+                        format!("({},)", values[0])
+                    } else {
+                        format!("({})", values.join(", "))
+                    },
                     decls.into_iter().flatten().collect(),
                 )
             }
