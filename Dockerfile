@@ -10,6 +10,8 @@ RUN apt-get update && apt-get install -y \
     libssl-dev \
     pkg-config \
     git \
+    ca-certificates \
+    gnupg \
     && rm -rf /var/lib/apt/lists/*
 
 # Install Rust using rustup (the Rust installer)
@@ -21,24 +23,15 @@ ENV PATH="/root/.cargo/bin:${PATH}"
 # Verify the installation
 RUN rustc --version
 
-# # Install fuelup
+# Install fuelup
 RUN curl https://install.fuel.network | sh
 
 ENV PATH="/root/.fuelup/bin:${PATH}"
 
-# Install NVM (Node Version Manager)
-RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.7/install.sh | bash
-
-# Set environment variables for NVM and install Node.js v18.19.0
-ENV NVM_DIR="/root/.nvm"
-ENV NODE_VERSION="v20.14.0"
-RUN . "$NVM_DIR/nvm.sh" && \
-    nvm install $NODE_VERSION && \
-    nvm use $NODE_VERSION && \
-    nvm alias default $NODE_VERSION
-
-# Set PATH for Node.js and NPM
-ENV PATH="$NVM_DIR/versions/node/$NODE_VERSION/bin:$PATH"
+# Install Node.js v20.x directly (no NVM — NVM is designed for interactive shells)
+RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
+    apt-get install -y nodejs && \
+    rm -rf /var/lib/apt/lists/*
 
 # Verify the Node.js installation
 RUN node -v
@@ -52,24 +45,34 @@ RUN fuelup default nightly-2024-05-28-x86_64-unknown-linux-gnu
 # Set the working directory
 WORKDIR /usr/src/abiprobe
 
-# Copy the current directory contents into the container at /usr/src/abiprobe
-COPY . .
+# --- Layer ordering: dependencies first, source code last ---
 
+# Copy dependency manifests first for better cache utilization
+COPY Cargo.toml Cargo.lock ./
 
-# Go to WORKDIR/ts-sdk and run npm install
+# Create a dummy main.rs to build dependencies (cache Rust deps separately)
+RUN mkdir src && echo 'fn main() { println!("dummy"); }' > src/main.rs
+
+# Build dependencies only (this layer is cached until Cargo.toml/Cargo.lock change)
+RUN cargo build --release && rm -rf src
+
+# Copy ts-sdk package.json and install npm dependencies
+COPY ts-sdk/package.json ts-sdk/package-lock.json* ts-sdk/
 WORKDIR /usr/src/abiprobe/ts-sdk
-# Setup Ts SDK 
 RUN npm install
 
-# Go to WORKDIR/forc_project and run forc build
+# Copy forc_project and build it
+WORKDIR /usr/src/abiprobe
+COPY forc_project/ forc_project/
 WORKDIR /usr/src/abiprobe/forc_project
-# Build project
 RUN forc build
 
-# Set the working directory
+# Now copy the rest of the source code (this is the layer that changes most often)
 WORKDIR /usr/src/abiprobe
-# Build the Rust application
-RUN cargo build
+COPY . .
 
-# Start a bash shell
-ENTRYPOINT ["target/debug/abiprobe"]
+# Build the Rust application in release mode
+RUN cargo build --release
+
+# Start the fuzzer
+ENTRYPOINT ["target/release/abiprobe"]
