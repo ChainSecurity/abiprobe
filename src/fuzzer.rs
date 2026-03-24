@@ -6,9 +6,9 @@ use std::{
 
 use fuels::types::{param_types::ParamType, Token};
 use serde::{Deserialize, Serialize};
-use tracing::{debug, error, info, warn};
+use tracing::{debug, info, warn};
 
-use crate::{rustsdk::{self, RustSDK}, sampler::Sampler, sway::Sway, tssdk::Ts};
+use crate::{rustsdk::RustSDK, sampler::Sampler, sway::Sway, tssdk::Ts};
 
 pub struct Fuzzer {
     sampler: Sampler,
@@ -72,7 +72,7 @@ impl Fuzzer {
         decodings: Vec<bool>,
         dir: String,
     ) {
-        if decodings.len() == 0 {
+        if decodings.is_empty() {
             // No decodings generated
             return;
         }
@@ -163,7 +163,7 @@ impl Fuzzer {
         self.check_decodings(&samples, reduced_sway_decodings, "sway".to_string());
         self.check_decodings(&samples, ts_decodings, "ts".to_string());
 
-        if sway_encodings.len() == 0 || rust_encodings.len() == 0 || ts_encodings.len() == 0 {
+        if sway_encodings.is_empty() || rust_encodings.is_empty() || ts_encodings.is_empty() {
             warn!("Failed to generate encodings for all 3 languages, please consult the output logs for more information.");
             self.round += 1;
             // NOTE maybe do binary search to find the failing ParamType/Token that compiles

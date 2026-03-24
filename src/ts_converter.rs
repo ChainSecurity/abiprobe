@@ -1,5 +1,5 @@
 use fuels::types::{param_types::ParamType, Token};
-use tracing::{debug, info};
+use tracing::debug;
 
 const CUSTOM_TYPES: &str = "{custom_types}";
 const TESTCASES: &str = "{testcases}";

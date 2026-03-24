@@ -1,11 +1,10 @@
 use std::io::Write;
-use std::{fs, process};
+use std::fs;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 use fuels::core::codec::{ABIDecoder, ABIEncoder};
-use fuels::types::output;
 use fuels::types::{param_types::ParamType, Token};
-use tracing::{debug, info, warn};
+use tracing::{debug, warn};
 
 use crate::{error::ABIProbeError, Encoding};
 

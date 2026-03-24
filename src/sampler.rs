@@ -3,7 +3,7 @@ use fuels::types::{
     StaticStringToken, Token, U256,
 };
 use rand::{rngs::StdRng, Rng, SeedableRng};
-use tracing::{debug, info};
+use tracing::debug;
 
 const NUM_PRIMITIVE_TYPES: usize = 12;
 const NUM_COMPOUND_TYPES: usize = 4;
@@ -208,7 +208,7 @@ impl Sampler {
                 let fields_names: Vec<String> = fields_types
                     .iter()
                     .enumerate()
-                    .map(|(i, _param_type)| (format!("field{}", i + 1)))
+                    .map(|(i, _param_type)| format!("field{}", i + 1))
                     .collect();
                 let fields: Vec<(String, ParamType)> = fields_names
                     .into_iter()
@@ -230,7 +230,7 @@ impl Sampler {
                 let enum_field_names: Vec<_> = enum_types
                     .iter()
                     .enumerate()
-                    .map(|(i, _param_type)| (format!("Variant{}", i + 1)))
+                    .map(|(i, _param_type)| format!("Variant{}", i + 1))
                     .collect();
 
                 let enum_fields = enum_field_names

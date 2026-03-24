@@ -6,7 +6,7 @@ use std::{
 };
 
 use fuels::types::{param_types::ParamType, Token};
-use tracing::{debug, info, warn};
+use tracing::{debug, warn};
 
 use crate::{error::ABIProbeError, ts_converter::TSConverter, Encoding};
 

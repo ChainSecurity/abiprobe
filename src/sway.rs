@@ -14,7 +14,7 @@ use fuels::{
     types::{param_types::ParamType, RawSlice, Token},
 };
 use tokio::runtime::Runtime;
-use tracing::{info, debug, warn};
+use tracing::{debug, warn};
 
 const OUTPUT_PATH: &str = "./forc_project/src/main.sw";
 const SWAY_COMPILATION_FAIL: &str = "Failed to compile";

@@ -1,6 +1,6 @@
 use fuels::types::{param_types::ParamType, Token};
 use std::vec;
-use tracing::{debug, info};
+use tracing::debug;
 
 pub struct SwayConverter {
     vector_counter: usize,
