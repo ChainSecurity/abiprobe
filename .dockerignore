@@ -1,0 +1,6 @@
+target/
+test-output/
+output/
+.git/
+forc_project/out/
+issues/
